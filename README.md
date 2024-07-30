@@ -5,18 +5,18 @@ Este proyecto es una aplicación de gestión de tareas desarrollada en Angular. 
 
 ## Funcionalidades
 
-1. **Lista de Tareas** :
+**Lista de Tareas**:
 
 * Muestra una lista de tareas recuperadas de un servicio.
 * Cada tarea incluye una descripción y un estado de completado.
 
-1. **Agregar Tareas** :
+**Agregar Tareas** :
 
 * Utiliza un modal para ingresar nuevas tareas.
 * El modal incluye un formulario para ingresar la descripción de la tarea y establecer su estado de completado.
 * Al guardar, la tarea se agrega a la lista y el modal se cierra automáticamente.
 
-1. **Marcar Tareas como Completadas** :
+**Marcar Tareas como Completadas** :
 
 * Permite marcar las tareas como completadas desde la lista.
 * Utiliza un servicio para actualizar el estado de las tareas.
