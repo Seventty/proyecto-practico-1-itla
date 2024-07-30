@@ -1,27 +1,46 @@
-# Tarea1
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+# Proyecto de Gestión de Tareas con Angular
 
-## Development server
+Este proyecto es una aplicación de gestión de tareas desarrollada en Angular. Permite a los usuarios agregar, visualizar y marcar tareas como completadas mediante una interfaz sencilla y eficiente. A continuación, se detalla la estructura y las funcionalidades principales del proyecto.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Funcionalidades
 
-## Code scaffolding
+1. **Lista de Tareas** :
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Muestra una lista de tareas recuperadas de un servicio.
+* Cada tarea incluye una descripción y un estado de completado.
 
-## Build
+1. **Agregar Tareas** :
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+* Utiliza un modal para ingresar nuevas tareas.
+* El modal incluye un formulario para ingresar la descripción de la tarea y establecer su estado de completado.
+* Al guardar, la tarea se agrega a la lista y el modal se cierra automáticamente.
 
-## Running unit tests
+1. **Marcar Tareas como Completadas** :
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* Permite marcar las tareas como completadas desde la lista.
+* Utiliza un servicio para actualizar el estado de las tareas.
 
-## Running end-to-end tests
+## Estructura del Proyecto
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+* **`ListaTareaComponent`** : Componente principal que muestra la lista de tareas. Incluye un modal para agregar nuevas tareas y maneja la lógica para abrir y cerrar el modal.
+* **`TareaComponent`** : Componente para representar una tarea individual en la lista. Permite marcar una tarea como completada.
+* **`TareaFormComponent`** : Componente de formulario reactivo para agregar nuevas tareas a través del modal.
+* **`ModalComponent`** : Componente reutilizable para la gestión de modales. Permite abrir y cerrar modales con configuraciones específicas.
 
-## Further help
+## Servicios
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+* **`TareaService`** : Servicio encargado de gestionar las operaciones relacionadas con las tareas, como obtener la lista de tareas y marcar tareas como completadas.
+
+## Configuración y Dependencias
+
+* **Angular** : Utiliza Angular para la estructura del proyecto y la gestión de componentes.
+* **RxJS** : Utiliza RxJS para manejar observables y la comunicación entre componentes y servicios.
+* **ng-bootstrap** : Utiliza ng-bootstrap para la implementación de modales.
+* **Swal2**: Utiliza sweetAlerto2 para gestionar los modales
+
+## Pruebas
+
+Las pruebas unitarias se realizan utilizando Jasmine y Angular Testing Library para asegurar que los componentes y servicios funcionen correctamente.
+
+Para más detalles sobre cómo configurar y ejecutar el proyecto, consulta los archivos de configuración en el repositorio.
