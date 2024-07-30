@@ -1,0 +1,24 @@
+<nav class="navbar navbar-light bg-light justify-content-between p-4">
+  <a class="navbar-brand">Tarea 1</a>
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="openTareaModal()">Agregar tarea</button>
+</nav>
+
+<div *ngIf="tareaCollection.length > 0; else noTareaTemplate">
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let tarea of tareaCollection" class="card-margin col-sm-6 col-md-4 col-lg-3">
+        <tarea [id]="tarea.id" [descripcion]="tarea.descripcion" [completada]="tarea.completada"></tarea>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #noTareaTemplate>
+  <div class="p-3">
+    <h1>Tareas 404 not found</h1>
+  </div>
+</ng-template>
+
+<UIModal [modalConfig]="tareaModalConfig" [modalOption]="tareaModalOption" #agregarTareaModal>
+  <tarea-form [modalReference]="agregarTareaModal"></tarea-form>
+</UIModal>

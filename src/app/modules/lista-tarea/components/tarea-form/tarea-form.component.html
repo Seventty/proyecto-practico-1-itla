@@ -1,0 +1,14 @@
+<div class="container">
+  <form [formGroup]="tareaForm">
+    <div class="form-group">
+      <label for="descripcion" class="p-1">Descripción</label>
+      <input placeholder="Agrega una descripcion" type="text" id="descripcion" class="form-control p-2" formControlName="descripcion">
+      <div ngClass="p-1" *ngIf="tareaForm?.controls?.['descripcion']?.invalid && (tareaForm?.controls?.['descripcion']?.dirty || tareaForm?.controls?.['descripcion']?.touched)" class="text-danger">
+        <p>Descripción es requerida</p>
+      </div>
+    </div>
+  </form>
+  <div class="p-2">
+    <button type="button" class="btn btn-primary btn-lg btn-block w-100" [disabled]="tareaForm.invalid" (click)="nuevaTarea()">Agregar</button>
+  </div>
+</div>

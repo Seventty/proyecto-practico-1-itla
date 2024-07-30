@@ -1,0 +1,15 @@
+.tarea-container {
+  padding: 1rem;
+  border: 1px black dashed;
+}
+
+.card-completed {
+  background-color: #f0f0f0;
+  color: #a0a0a0;
+}
+
+.card-completed .btn {
+  background-color: #d3d3d3;
+  border-color: #d3d3d3;
+  color: #808080;
+}

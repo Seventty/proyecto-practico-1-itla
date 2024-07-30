@@ -1,0 +1,11 @@
+<div class="card m-3" [ngClass]="{'card-completed': completada}" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Tarea ID: {{id}}</h5>
+    <p class="card-text">{{descripcion}}</p>
+    <p class="card-text">{{completada | tareaStatus}}</p>
+    <div class="d-flex justify-content-center">
+      <button type="button" class="btn btn-success btn-lg btn-block" [disabled]="completada"
+        (click)="completarTarea(id)">Marcar completado</button>
+    </div>
+  </div>
+</div>
