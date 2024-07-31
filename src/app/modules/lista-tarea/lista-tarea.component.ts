@@ -52,9 +52,11 @@ export class ListaTareaComponent implements OnInit {
    * Suscripción al observable que obtiene las tareas del servicio
    */
   ngOnInit() {
-    this.tareasService.getTareas.subscribe((res: Array<ITarea>) => {
+    /* this.tareasService.getTareas.subscribe((res: Array<ITarea>) => {
       this.tareaCollection = res;
-    })
+    }) */
+
+      this.tareaCollection = this.tareasService.getTareas;
   }
 
   /**

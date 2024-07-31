@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal, Signal } from '@angular/core';
 import { ITarea } from '@interfaces/ITarea';
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -35,12 +35,14 @@ export class TareaService {
     }
   ]
 
-  private $tareaCollection: BehaviorSubject<Array<ITarea>> = new BehaviorSubject<Array<ITarea>>(this.listaTareas)
+  //private $tareaCollection: BehaviorSubject<Array<ITarea>> = new BehaviorSubject<Array<ITarea>>(this.listaTareas)
+  private tareaCollectionSignal: Signal<Array<ITarea>> = signal<Array<ITarea>>(this.listaTareas);
 
   constructor() { }
 
-  get getTareas(): Observable<Array<ITarea>> {
-    return this.$tareaCollection.asObservable()
+  get getTareas(): Array<ITarea> {
+    //return this.$tareaCollection.asObservable()
+    return this.tareaCollectionSignal();
   }
 
   public nuevaTarea(tareaForm: any) {
